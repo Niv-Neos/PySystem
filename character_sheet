@@ -3,23 +3,28 @@ import numpy as np
 
 class Char:
 
-       def __init__(self,SPE,ANA,CRE,EMO,WIL,ST,DX,CO,HT,PE,Species,Type):
+       def __init__(self):
+
+              ### Identity
+
+              self.Name = Name
 
               ### Base Stats
 
-              self.SPE = SPE
-              self.ANA = ANA
-              self.CRE = CRE
-              self.EMO = EMO
-              self.WIL = WIL
+              self.SPE = 10
+              self.ANA = 10
+              self.CRE = 10
+              self.EMO = 10
+              self.WIL = 10
 
-              self.ST = ST
-              self.DX = DX
-              self.CO = CO
-              self.HT = HT
-              self.PE = PE
+              self.ST = 10
+              self.DX = 10
+              self.CO = 10
+              self.HT = 10
+              self.PE = 10
 
               self.Species = Species
+              self.Gender = Gender
               self.Type = Type
 
               ### Base Secondary
@@ -27,15 +32,19 @@ class Char:
               self.HP = (self.CO*5) + (self.ST*2.5) + (self.HT*2.5)
               self.FP = self.HT * 10
               self.MP = self.WIL * 10
+
               self.Sanity = self.WIL * 10
               self.Lust = self.WIL * 10
+
               self.dodge = self.DX
               self.move = DX/2
 
-              ### Base Third 
+              self.size = 100 ### in centimeters
+
+              ### Base Third
 
               self.Tech_Level = 0
-              self.languages = [0,""] ### Rating, Language
+              self.languages = [3,"Engrish"] ### Rating, Language
 
               ### Base Traits
 
@@ -84,6 +93,9 @@ class Char:
 
               self.Climbing_Skill = 0
               self.Climbing = [((ST/4)-1)+((HT/4)-1)+((DX/2)-2)+self.Climbing_Skill,""] ### [Rating,Species]
+
+              self.Cooking_Skill = 0
+              self.Cooking = [((ANA/2)-2)+((CRE/2)-2)+self.Cooking_Skill,""] ### [Rating,Speciality]
 
               self.Diplomacy_Skill = 0
               self.Diplomacy = [((EMO-5)+self.Diplomacy_Skill)] ### [Rating]
@@ -148,21 +160,15 @@ class Char:
               self.Writing_Skill = 0
               self.Writing = [((ANA-4)+self.Writing_Skill)*(self.languages[0]/3),"",self.Tech_Level] ### [Rating,Language,Tech Level]
 
-       def printer(self):
-              print(self.SPE)
-              print(self.ANA)
-              print(self.CRE)
-              print(self.EMO)
-              print(self.WIL)
-              print(self.ST)
-              print(self.DX)
-              print(self.CO)
-              print(self.HT)
-              print(self.PE)
-              print(self.Species)
-              print(self.Type)
-              print(self.Tech_Level+2)
+              ### Items
 
+              self.Carrying_Items = ["Dust"]
 
-Base = Char(10,10,10,10,10,10,10,10,10,10,"Creature","Biological")
-Base.printer()
+              '''
+              Insert all familiarities they know and what level.
+              1 - Beginner
+              2 - Interminate
+              3 - Expert
+              '''
+
+              self.familiaritie = np.dtype([("I Know Something":3)])
