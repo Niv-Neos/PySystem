@@ -43,7 +43,7 @@ Attacker.Damage[2]/(Attacker.WIL*10), Attacker.Damage[3]/50+(Attacker.WIL*5), At
 Familiarity = ### How well they know the recipe (f)
 Technology = ### Quality of the Technology (t)
 
-S = (((Rating + Personal + Accuracy) * rd.randint( ( Accuracy/100) + 0.6,1.2 ) ) -
+S = (((Rating + Personal + Accuracy) * round(rd.randint(( Accuracy/100) + 0.6, 1.2), 2) -
 (Difficulty * (1 + ( Cover + Damage + Vision + Range + Extra_Against ) / (Familiarity * Technology * Extra_For) ) ))
 
 print(S)

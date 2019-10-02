@@ -6,7 +6,6 @@ import random as rd
 import character_sheet as char
 import common_food as food
 
-Success = S
 Cooker = char.Char()
 Food_Item = food.Food()
 
@@ -15,12 +14,12 @@ Personal = ### Enter Personality and Emotional Factors (p)
 Extra_Against = ### Any Additional Factors (e_n)
 Extra_For = ### Any Additional Factors (e_d)
 
-Difficulty = 0 ### (d)
+Difficulty = 1 ### (d)
 
 Familiarity = ### How well they know the recipe (f)
 Technology = ### Quality of the Technology (t)
 
-S = ((Rating + Personal) * round(rd.uniform(0.80,1.20), 2)) - (Difficulty * (1 + Extra_Against / (Familiarity * Technology * Extra_For)))
+S = round((((Rating + Personal) * rd.uniform(0.80,1.20), 2)) - (Difficulty * (1 + Extra_Against / (Familiarity + Technology + Extra_For))), 2)
 
 print(S)
 

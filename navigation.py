@@ -5,17 +5,21 @@ import engine as eg
 
 import character_sheet as char
 
-Success = S
 Navigator = char.Char()
 Direction = eg.Minner({Insert}, -0.1, 360.1) ### 0 North, 90 East, 180 South, 270 West
 Speed = 0
+
+Familiarity =
+Technology =
+Extra_Against =
+Extra_For =
 
 Rating = char.Navigation_Skill[0]
 
 Cal_i = eg.Minner((Accuracy/100) + 0.80, 0.80, 1.10)
 
 S = (((Rating + Personal + Accuracy) * round(rd.uniform((Cal_i.result, 1.10)), 2) -
-(Difficulty * (1 + ( Vision + Extra_Against ) / (Familiarity * Technology * Extra_For) ) ) )
+(Difficulty * (1 + ( Vision + Extra_Against ) / (Familiarity + Technology + Extra_For) ) ) )
 
 if S > 0:
     if S >= 12 - Technology:
