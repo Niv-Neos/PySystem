@@ -22,10 +22,17 @@ class Food:
         self.Sugar = 0
         self.Protein = 0
 
+        self.Height = 100 ### in centimeters
+        self.Width = 100
+        self.Length = 100
+
+        self.Weight = 1
+
+
         ### Traits
 
         self.FLAMMABLE = False
-        self.POISONOUS = {False, []} ### Apply to what
+        self.POISONOUS = [False, []] ### Apply to what
         self.RAW_EATABLE = True
         self.COOK_EATABLE = True
         self.MOIST = False
@@ -51,10 +58,16 @@ class Poison_Fruit:
         self.Sugar = 0
         self.Protein = 0
 
+        self.Height = 7 ### in centimeters
+        self.Width = 8
+        self.Length = 8
+
+        self.Weight = 0.14
+
+
         ### Traits
 
         self.FLAMMABLE = False
-        self.POISONOUS = (True, ["People A", "People B"]) ### Apply to what
+        self.POISONOUS = [True, ["People A", "People B"]] ### Apply to what
         self.RAW_EATABLE = True
         self.COOK_EATABLE = True
-        

@@ -65,7 +65,7 @@ class Char:
               ### Base Third
 
               self.Tech_Level = 0
-              self.Languages = ["Engrish",3] ### Rating, Language
+              self.Languages = {"Engrish":3} ### Rating, Language
 
               ### Base Traits
 
@@ -96,6 +96,9 @@ class Char:
 
               self.Aerobatics_Skill = 0
               self.Aerobatics = [(self.DX-5)+self.Aerobatics_Skill, [""]] ### [Rating,Species]
+
+              self.Aiding_Skill = 0
+              self.Aiding = [(self.ANA-6)+self.Aiding_Skill, [""]] ### [Rating,Species]
 
               self.Aquabatics_Skill = 0
               self.Aquabatics = [(self.DX-5)+self.Aquabatics_Skill, [""]] ### [Rating,Species]
@@ -182,11 +185,8 @@ class Char:
               self.Vehicle = [(self.DX-5)+self.Vehicle_Skill,[""],self.Tech_Level] ### [Rating,Type,Tech Level]
 
               self.Writing_Skill = 0
-              self.Writing = [((self.ANA-4)+self.Writing_Skill)*(self.Languages[1]/3),[""],self.Tech_Level] ### [Rating,Language,Tech Level]
+              self.Writing = [((self.ANA-4)+self.Writing_Skill)*(self.Languages[""]/3),self.Tech_Level] ### [Rating,Tech Level] Insert Language in the brackets of self.Languages
 
-              ### Items
-
-              self.Carrying_Items = np.matrix([["Dust",0]]) ### Name, Quantity
 
               '''
               Insert all familiarities they know and what level.
@@ -195,4 +195,4 @@ class Char:
               3 - Expert
               '''
 
-              self.familiaritie = np.matrix([("I Know Something",3)])
+              self.familiaritie = {"I Know Something":3}

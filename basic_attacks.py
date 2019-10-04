@@ -18,9 +18,20 @@ class Attack:
 
         ### Traits
 
+        self.ELECTRICAL = False
         self.FLAMMABLE = False
         self.POISONOUS = (False, []) ### Apply to what
         self.MOIST = False
+
+    def Effect(self, Attacker, Defender, Attack, Protection):
+        Attacker = Attacker
+        Defender = Defender
+        Attack = Attack
+        Protection = Protection
+        Total = round(((Attack.Harm*(rd.uniform(Attack.Random[0],Attack.Random[1]))) - Protection.DR), 2)
+        print("You hit the target! They are dealt", Total, Attack.HarmType, "damage.")
+        Defender.Damage[Attack.Inflict] = Defender.Damage[Attack.Inflict] + Total
+        
 
 class Pheromone_Spray:
 
@@ -36,9 +47,10 @@ class Pheromone_Spray:
         self.Random = [0.80,1.20]
         ### Traits
 
+        self.ELECTRICAL = False
         self.FLAMMABLE = False
-        self.POISONOUS = (False, []) ### Apply to what
-        self.MOIST = False
+        self.POISONOUS = [False, []] ### Apply to what
+        self.MOIST = True
 
     def Effect(self, Attacker, Defender, Attack, Protection):
         Attacker = Attacker
@@ -48,4 +60,4 @@ class Pheromone_Spray:
         Total = round(((Attack.Harm*(rd.uniform(Attack.Random[0],Attack.Random[1]))) - Protection.DR), 2)
         print("You hit the target! They are dealt", Total, Attack.HarmType, "damage.")
         Defender.Damage[Attack.Inflict] = Defender.Damage[Attack.Inflict] + Total
-        ce.Lusting(Total,-5,5)
+        ce.Lusting(Defender.Lust,-5,5)

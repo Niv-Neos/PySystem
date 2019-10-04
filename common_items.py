@@ -14,10 +14,17 @@ class Item:
 
         self.Electricity = 0
 
+        self.Height = 100 ### in centimeters
+        self.Width = 100
+        self.Length = 100
+
+        self.Weight = 100 ### in kg
+
         ### Traits
 
+        self.ELECTRICAL = False
         self.FLAMMABLE = False
-        self.POISONOUS = (False, []) ### Apply to what
+        self.POISONOUS = [False, []] ### Apply to what
         self.RAW_EATABLE = True
         self.COOK_EATABLE = True
         self.MOIST = False
