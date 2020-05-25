@@ -2,6 +2,12 @@ import math as mt
 import numpy as np
 import random as rd
 import engine as eg
+import physics as ph
+import cylax as cl
+import sys
+import config as cf
+
+sys.path.insert(1, 'C:/Users/Frank/Desktop/Cylax/PySystem')
 
 '''
 This is an inventory system for characters. Copy this file for each characters that will be
@@ -38,4 +44,4 @@ class Backpack:
         self.Items = {Item_1.Name : Item_1.Weight,
                         Item_2.Name : Item_2.Weight}
 
-        self.Weight = 1 + sum(self.Items.values()))
+        self.Weight = 1 + sum(self.Items.values())

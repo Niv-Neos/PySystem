@@ -2,6 +2,12 @@ import math as mt
 import numpy as np
 import random as rd
 import engine as eg
+import physics as ph
+import cylax as cl
+import sys
+import config as cf
+
+sys.path.insert(1, 'C:/Users/Frank/Desktop/Cylax/PySystem')
 
 ### Import the Character here
 import character_sheet as char
@@ -32,7 +38,7 @@ Difficulty = 4 + Cultures
 Cal_i = eg.Minner(Budget/Size, 0, 2)
 Cal_ii = eg.Minner(Time/(3650/Assistance), -400, 3)
 
-S = ((Rating + Personal) * round(rd.uniform(0.90, 1.10))) - (Difficulty * ((1 + Extra_Against + Group)/(Extra_For + Familiarity + Technology + Cal_i + Cal_ii)))
+S = ((Rating + Personal) * round(rd.uniform(0.90, 1.10))) - (Difficulty * ((1 + Extra_Against + Group)/(1 + Extra_For + Familiarity + Technology + Cal_i + Cal_ii)))
 
 print(S)
 

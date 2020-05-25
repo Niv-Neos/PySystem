@@ -9,33 +9,33 @@ import config as cf
 
 sys.path.insert(1, 'C:/Users/Frank/Desktop/Cylax/PySystem')
 
-class Species:
+class Kan:
 
     def __init__(self):
 
-        self.Name = ""
+        self.Name = "Kan"
         self.Type = "Biological"
 
-        self.SPEstat = 0
-        self.ANAstat = 0
-        self.CREstat = 0
-        self.EMOstat = 0
-        self.WILstat = 0
+        self.SPEstat = 2
+        self.ANAstat = 2
+        self.CREstat = 2
+        self.EMOstat = 2
+        self.WILstat = 2
 
-        self.STstat = 0
-        self.DXstat = 0
+        self.STstat = 1
+        self.DXstat = 2
         self.COstat = 0
-        self.HTstat = 0
-        self.PEstat = 0
+        self.HTstat = -1
+        self.PEstat = 1
 
         ### Base Secondary
 
-        self.HPstat = 0
-        self.FPstat = 0
+        self.HPstat = 5
+        self.FPstat = -5
         self.MPstat = 0
 
-        self.Sanitystat = 0
-        self.Luststat = 0
+        self.Sanitystat = 10
+        self.Luststat = -10
         self.Fearstat = 0
 
         self.Dodgestat = 0
@@ -49,5 +49,8 @@ class Species:
         self.COOK_EATABLE = True
         self.MOIST = False
 
+        self.SEXTYPE = "Tyromitive"
+
         '''
+        Claw
         '''

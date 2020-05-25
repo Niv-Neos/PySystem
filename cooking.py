@@ -1,9 +1,16 @@
 import math as mt
 import numpy as np
 import random as rd
+import engine as eg
+import physics as ph
+import cylax as cl
+import sys
+import config as cf
+
+sys.path.insert(1, 'C:/Users/Frank/Desktop/Cylax/PySystem')
 
 ### Import the Character here
-import character_sheet as char
+import character_sheet as chars
 import common_food as food
 
 Cooker = char.Char()
@@ -19,7 +26,7 @@ Difficulty = 1 ### (d)
 Familiarity = ### How well they know the recipe (f)
 Technology = ### Quality of the Technology (t)
 
-S = round((((Rating + Personal) * rd.uniform(0.80,1.20), 2)) - (Difficulty * (1 + Extra_Against / (Familiarity + Technology + Extra_For))), 2)
+S = round((((Rating + Personal) * rd.uniform(0.80,1.20), 2)) - (Difficulty * ((1 + Extra_Against) / (1 + Familiarity + Technology + Extra_For))), 2)
 
 print(S)
 
